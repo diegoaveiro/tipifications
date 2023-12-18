@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TipifiçãoGO</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      gap: 10px;
+      padding: 3px;
+      text-transform: uppercase;
+      color: black;
+    }
+
+    body {
+      background-color:cornflowerblue;
+    }
+
+    button {
+      background-color: pink;
+      border-radius: 5px;
+    }
+
+    .category {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .text-button {
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="category">
+    <button class="category-button" onclick="showText('category1')">Assistências/Instalações</button>
+    <button class="category-button" onclick="showText('category2')">Cobranças</button>
+    <button class="category-button" onclick="showText('category3')">Faturação</button>
+    <button class="category-button" onclick="showText('category4')">Pedidos/Processos</button>
+    <button class="category-button" onclick="showText('category5')">Processos Exclusivos Móvel</button>
+    <button class="category-button" onclick="showText('category6')">Questões Gerais</button>
+    <button class="category-button" onclick="showText('category7')">Outros</button>
+    <button class="category-button" onclick="showText('category8')">Reclamações</button>
+
+    <div id="category1" class="hidden">
+      <button class="copy-button" onclick="copyText('text1')">Anulação</button>
+      <button class="copy-button" onclick="copyText('text2')">Falha de Comparência</button>
+      <button class="copy-button" onclick="copyText('text3')">Antecipação</button>
+      <button class="copy-button" onclick="copyText('text4')">Remarcação</button>
+      <button class="copy-button" onclick="copyText('text5')">Informação</button>
+      <button class="copy-button" onclick="copyText('text6')">Reclamções</button>
+    </div>
+
+    <div id="category2" class="hidden">
+      <button class="copy-button" onclick="copyText('text7')">Acordo de Pagamento</button>
+      <button class="copy-button" onclick="copyText('text8')">Info Comunicacoes Cobrancas</button>
+      <button class="copy-button" onclick="copyText('text9')">Corte Falta Pagamento/Religação</button>
+      <button class="copy-button" onclick="copyText('text10')">Reembolso</button>
+      <button class="copy-button" onclick="copyText('text11')">Suspensão/Reactivação</button>
+    </div>
+
+    <div id="category3" class="hidden">
+      <button class="copy-button" onclick="copyText('text12')">Alteraçao Layout Factura</button>
+      <button class="copy-button" onclick="copyText('text13')">Correspondência</button>
+      <button class="copy-button" onclick="copyText('text14')">Créditos/Débitos</button>
+      <button class="copy-button" onclick="copyText('text15')">Custo Chamada Linha Apoio</button>
+      <button class="copy-button" onclick="copyText('text16')">Factura_Esclarecimento Pos-venda/Migracao</button>
+      <button class="copy-button" onclick="copyText('text17')">Factura_Explicacao Itens da Factura</button>
+      <button class="copy-button" onclick="copyText('text18')">Factura_Com Erro Confirmado</button>
+      <button class="copy-button" onclick="copyText('text19')">Fatura Electrónica</button>
+      <button class="copy-button" onclick="copyText('text20')">Móvel Carregamentos</button>
+      <button class="copy-button" onclick="copyText('text21')">Pagamento/Carregamento não alocado</button>
+      <button class="copy-button" onclick="copyText('text22')">Pagamentos_Dados/Info Saldo</button>
+      <button class="copy-button" onclick="copyText('text23')">Pagamentos_Debito Directo</button>
+      <button class="copy-button" onclick="copyText('text24')">Pagamentos_Outras Formas Pagamento</button>
+    </div>
+
+    <div id="category4" class="hidden">
+      <button class="copy-button" onclick="copyText('text26')">Atualização Dados Cliente</button>
+      <button class="copy-button" onclick="copyText('text27')">Alteração Titular/Contratual</button>
+      <button class="copy-button" onclick="copyText('text28')">Alterações na Instalação</button>
+      <button class="copy-button" onclick="copyText('text29')">Ativação de Servicos</button>
+      <button class="copy-button" onclick="copyText('text30')">CVP</button>
+      <button class="copy-button" onclick="copyText('text31')">Desativação de serviços</button>
+      <button class="copy-button" onclick="copyText('text32')">Envio Correspondência</button>
+      <button class="copy-button" onclick="copyText('text33')">Expedição</button>
+      <button class="copy-button" onclick="copyText('text34')">Mudança de Residência</button>
+      <button class="copy-button" onclick="copyText('text35')">Portabilidade</button>
+      <button class="copy-button" onclick="copyText('text36')">Renegociação de Contrato/Fidelização</button>
+      <button class="copy-button" onclick="copyText('text37')">TSI</button>
+    </div>
+
+    <div id="category5" class="hidden">
+      <button class="copy-button" onclick="copyText('text38')">2a Via Cartão SIM</button>
+      <button class="copy-button" onclick="copyText('text39')">Activação Cartão SIM</button>
+      <button class="copy-button" onclick="copyText('text40')">Adesão Movel</button>
+      <button class="copy-button" onclick="copyText('text41')">Móvel Aditivos/Extra-Plafond</button>
+      <button class="copy-button" onclick="copyText('text42')">Móvel Alteração Tarifário</button>
+      <button class="copy-button" onclick="copyText('text43')">Móvel Roaming</button>
+      <button class="copy-button" onclick="copyText('text44')">PIN/PUK</button>
+    </div>
+
+    <div id="category6" class="hidden">
+      <button class="copy-button" onclick="copyText('text45')">Agradecimento/Sugestões</button>
+      <button class="copy-button" onclick="copyText('text46')">Área Cliente</button>
+      <button class="copy-button" onclick="copyText('text47')">Funcionalidades Móvel</button>
+      <button class="copy-button" onclick="copyText('text48')">Funcionalidades NET</button>
+      <button class="copy-button" onclick="copyText('text49')">Funcionalidades TEL</button>
+      <button class="copy-button" onclick="copyText('text50')">Funcionalidades TV</button>
+      <button class="copy-button" onclick="copyText('text51')">Informações Nowo</button>
+      <button class="copy-button" onclick="copyText('text52')">Ligações Ilegais</button>
+    </div>
+
+    <div id="category7" class="hidden">
+      <button class="copy-button" onclick="copyText('text53')">Desligamento TV Analogica Programado</button>
+      <button class="copy-button" onclick="copyText('text54')">Esclarecimento Contato Recebido</button>
+      <button class="copy-button" onclick="copyText('text55')">Loop</button>
+      <button class="copy-button" onclick="copyText('text56')">Saida de Canais da Grelha TV</button>
+    </div>
+
+    <div id="category8" class="hidden">
+      <button class="copy-button" onclick="copyText('text57')">Call Center/Mailing</button>
+      <button class="copy-button" onclick="copyText('text58')">D2D/Agentes</button>
+      <button class="copy-button" onclick="copyText('text59')">Lojas</button>
+      <button class="copy-button" onclick="copyText('text60')">REG PORT - Audicao anuncio portabilidade</button>
+      <button class="copy-button" onclick="copyText('text61')">REG PORT - Nao audicao anuncio portabilidade</button>
+      <button class="copy-button" onclick="copyText('text62')">Tecnicos/PC Medic</button>
+      <button class="copy-button" onclick="copyText('text63')">Vendas/Renegociacao/Retencao</button>
+    </div>
+  </div>
+
+  <script>
+    // Object to store text content
+    var textContent = {
+      text1: "rhm//5pi//clt solicita anulação da assistência técnica",
+      text2: "rhm//5pi//clt informa falha de comparência da assistência técnica",
+      text3: "rhm//5pi//clt solicita antecipação da assistência técnica",
+      text4: "rhm//5pi//clt solicita remarcação da assistência técnica",
+      text5: "rhm//5pi//clt solicita informação sobre a assistência técnica",
+      text6: "rhm//5pi//clt deseja fazer uma  ção sobre a assistência técnica",
+
+      text7: "rhm//5pi//clt solicita/informa sobre acordo de pagamento",
+      text8: "rhm//5pi//clt solicita informações sobre contatos da área de cobranças",
+      text9: "rhm//5pi//clt solicita/informa sobre corte por falta de pagamento/religação",
+      text10: "rhm//5pi//clt solicita/informa sobre reembolso",
+      text11: "rhm//5pi//clt solicita/informa sobre suspensão/reactivação",
+
+      text12: "rhm//5pi//clt solicita alteração do tipo de detalhe da fatura",
+      text13: "rhm//5pi//clt   de atraso/extravio de correspondência//solicita 2 via",
+      text14: "rhm//5pi//clt informa/solicita sobre créditos/débitos",
+      text15: "rhm//5pi//clt solicita/informa sobre custo da chamada da linha de apoio",
+      text16: "rhm//5pi//clt solicita esclarecimentos sobre pós-venda/migração",
+      text17: "rhm//5pi//clt solicita esclarecimentos sobre itens da fatura",
+      text18: "rhm//5pi//clt solicita/informa sobre erro na fatura",
+      text19: "rhm//5pi//clt solicita/informa sobre faturação electrónica",
+      text20: "rhm//5pi//clt solicita/informa sobre carregamentos",
+      text21: "rhm//5pi//clt solicita/informa sobre pagamentos não alocados",
+      text22: "rhm//5pi//clt solicita/informa sobre dados de pagamentos/saldos",
+      text23: "rhm//5pi//clt solicita/informa sobre débito directo",
+      text24: "rhm//5pi//clt solicita/informa sobre outras formas de pagamento",
+
+      text26: "rhm//5pi//clt solicita alteração/atualização de dados ",
+      text27: "rhm//5pi//clt solicita alteração do titular/contratual",
+      text28: "rhm//5pi//clt solicita alteração na instalação/equipamentos",
+      text29: "rhm//5pi//clt solicita alteração de serviços",
+      text30: "rhm//5pi//clt solicita código cpv",
+      text31: "rhm//5pi//clt solicita desativação de serviços",
+      text32: "rhm//5pi//clt solicita envio de correspondência",
+      text33: "rhm//5pi//clt solicita envio/cancelamento/recepção",
+      text34: "rhm//5pi//clt solicita/informa alteração de residência",
+      text35: "rhm//5pi//clt solicita portabilidade",
+      text36: "rhm//5pi//clt solicita renegociação",
+      text37: "rhm//5pi//clt solicita informação/adesão ao TSI",
+
+      text38: "rhm//5pi//clt solicita/cancelamento 2via do cartão sim",
+      text39: "rhm//5pi//clt solicita ativação do cartão sim",
+      text40: "rhm//5pi//clt solicita adesão ao plano móvel",
+      text41: "rhm//5pi//clt solicita aditivos/extra-plafond",
+      text42: "rhm//5pi//clt solicita alteração do tarifário",
+      text43: "rhm//5pi//clt solicita informação/ativação sobre/do móvel roaming",
+      text44: "rhm//5pi//clt solicita PIN/PUK",
+
+      text45: "rhm//5pi//clt agradece/sugere",
+      text46: "rhm//5pi//clt solicita sobre área de cliente",
+      text47: "rhm//5pi//clt solicita/informa",
+      text48: "rhm//5pi//clt solicita/informa",
+      text49: "rhm//5pi//clt solicita/informa",
+      text50: "rhm//5pi//clt solicita/informa",
+      text51: "rhm//5pi//clt solicita",
+      text52: "rhm//5pi//clt informa/denuncia",
+
+      text53: "rhm//5pi//clt solicita/informa sobre tv analógica",
+      text54: "rhm//5pi//clt solicita/informa sobre contato por parte da NOWO",
+      text55: "rhm//5pi//clt solicita/informa sobre apoio ao cliente loop",
+      text56: "rhm//5pi//clt solicita/informa saida de canais da grelha Tv",
+      
+      text57: "rhm//5pi//clt informa sobre CallCenter/Mailing",
+      text58: "rhm//5pi//clt informa sobre vendedor",
+      text59: "rhm//5pi//clt informa sobre atendimento em loja",
+      text60: "rhm//5pi//clt informa manutenção indevida do anúncio de portabilidade",
+      text61: "rhm//5pi//clt informa remoção indevida do anúncio de portabilidade",
+      text62: "rhm//5pi//clt informa sobre Técnicos/PC Medic",
+      text63: "rhm//5pi//clt informa sobre vendas/renegociação/retenção",
+    };
+
+    function showText(category) {
+      // Hide all categories
+      document.getElementById('category1').style.display = 'none';
+      document.getElementById('category2').style.display = 'none';
+      document.getElementById('category3').style.display = 'none';
+      document.getElementById('category4').style.display = 'none';
+      document.getElementById('category5').style.display = 'none';
+      document.getElementById('category6').style.display = 'none';
+      document.getElementById('category7').style.display = 'none';
+      document.getElementById('category8').style.display = 'none';
+
+      // Show the selected category
+      document.getElementById(category).style.display = 'flex';
+    }
+
+    /* function editText(text) {
+      // Get the text content
+      var selectedText = textContent[text];
+
+      // Prompt for text editing
+      var editedText = prompt('Editar texto:', selectedText);
+
+      // Update text content if user didn't cancel
+      if (editedText !== null) {
+        textContent[text] = editedText;
+        alert('Texto atualizado com sucesso!');
+      }
+    } */
+
+    // Copy Text
+    function copyText(text) {
+      // Get the text content
+      var selectedText = textContent[text];
+
+      // Copy the text to the clipboard
+      navigator.clipboard.writeText(selectedText);
+      // alert(selectedText); 
+    }
+  </script>
+
+</body>
+</html>
