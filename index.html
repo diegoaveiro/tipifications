@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TipifiçãoGO</title>
+  <title>TipificaçõesGO</title>
   <style>
     * {
       margin: 0;
@@ -11,7 +11,7 @@
       box-sizing: border-box;
       gap: 10px;
       padding: 3px;
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
       color: black;
     }
 
@@ -23,6 +23,7 @@
     button {
       background-color: pink;
       border-radius: 5px;
+      text-transform: uppercase;
     }
 
     .category {
@@ -47,9 +48,21 @@
       justify-content: space-between;
       align-items: flex-start;
     }
+
+    #changeTextButton {
+      position: fixed;
+      top: 11px;
+      left: 11px;
+      background-color: gold;
+      border: none;
+      padding: 3px 9px 3px 3px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
+  <button id="changeTextButton" onclick="changeText()">Configurar</button>
 
   <div class="category">
     <button class="category-button" onclick="showText('category1')">Assistências/Instalações</button>
@@ -152,78 +165,77 @@
   <script>
     // Object to store text content
     var textContent = {
-      text1: "rhm//5pi//clt solicita anulação da assistência técnica",
-      text2: "rhm//5pi//clt informa falha de comparência da assistência técnica",
-      text3: "rhm//5pi//clt solicita antecipação da assistência técnica",
-      text4: "rhm//5pi//clt solicita remarcação da assistência técnica",
-      text5: "rhm//5pi//clt solicita informação sobre a assistência técnica",
-      text6: "rhm//5pi//clt deseja fazer uma  reclamação sobre a assistência técnica",
+      text1: "rhm//XXX//clt solicita anulação da assistência técnica",
+      text2: "rhm//XXX//clt informa falha de comparência da assistência técnica",
+      text3: "rhm//XXX//clt solicita antecipação da assistência técnica",
+      text4: "rhm//XXX//clt solicita remarcação da assistência técnica",
+      text5: "rhm//XXX//clt solicita informação sobre a assistência técnica",
+      text6: "rhm//XXX//clt deseja fazer uma  reclamação sobre a assistência técnica",
 
-      text7: "rhm//5pi//clt solicita/informa sobre acordo de pagamento",
-      text8: "rhm//5pi//clt solicita informações sobre contatos da área de cobranças",
-      text9: "rhm//5pi//clt solicita/informa sobre corte por falta de pagamento/religação",
-      text10: "rhm//5pi//clt solicita/informa sobre reembolso",
-      text11: "rhm//5pi//clt solicita/informa sobre suspensão/reactivação",
+      text7: "rhm//XXX//clt solicita informações sobre acordo de pagamento",
+      text8: "rhm//XXX//clt solicita informações sobre contatos da área de cobranças",
+      text9: "rhm//XXX//clt solicita informações sobre corte por falta de pagamento/religação",
+      text10: "rhm//XXX//clt solicita informações sobre reembolso",
+      text11: "rhm//XXX//clt solicita informações sobre suspensão/reactivação",
 
-      text12: "rhm//5pi//clt solicita alteração do tipo de detalhe da fatura",
-      text13: "rhm//5pi//clt informa atraso/extravio de correspondência//solicita 2 via",
-      text14: "rhm//5pi//clt informa/solicita sobre créditos/débitos",
-      text15: "rhm//5pi//clt solicita/informa sobre custo da chamada da linha de apoio",
-      text16: "rhm//5pi//clt solicita esclarecimentos sobre pós-venda/migração",
-      text17: "rhm//5pi//clt solicita esclarecimentos sobre itens da fatura",
-      text18: "rhm//5pi//clt solicita/informa sobre erro na fatura",
-      text19: "rhm//5pi//clt solicita/informa sobre faturação electrónica",
-      text20: "rhm//5pi//clt solicita/informa sobre carregamentos",
-      text21: "rhm//5pi//clt solicita/informa sobre pagamentos não alocados",
-      text22: "rhm//5pi//clt solicita/informa sobre dados de pagamentos/saldos//dados informados/enviados via sms",
-      text23: "rhm//5pi//clt solicita/informa sobre débito directo",
-      text24: "rhm//5pi//clt solicita/informa sobre outras formas de pagamento",
+      text12: "rhm//XXX//clt solicita alteração do tipo de detalhe da fatura",
+      text13: "rhm//XXX//clt informa atraso/extravio de correspondência//solicita 2 via",
+      text14: "rhm//XXX//clt solicita informações sobre créditos/débitos",
+      text15: "rhm//XXX//clt solicita informações sobre custo da chamada da linha de apoio",
+      text16: "rhm//XXX//clt solicita esclarecimentos sobre pós-venda/migração",
+      text17: "rhm//XXX//clt solicita esclarecimentos sobre itens da fatura",
+      text19: "rhm//XXX//clt solicita informações sobre faturação electrónica",
+      text20: "rhm//XXX//clt solicita informações sobre carregamentos",
+      text21: "rhm//XXX//clt solicita informações sobre pagamentos não alocados",
+      text22: "rhm//XXX//clt solicita informações sobre dados para pagamentos/saldos//dados informados/enviados via sms",
+      text23: "rhm//XXX//clt solicita informações sobre débito directo",
+      text24: "rhm//XXX//clt solicita informações sobre outras formas de pagamento",
 
-      text26: "rhm//5pi//clt solicita alteração/atualização de dados ",
-      text27: "rhm//5pi//clt solicita alteração do titular/contratual",
-      text28: "rhm//5pi//clt solicita alteração na instalação/equipamentos",
-      text29: "rhm//5pi//clt solicita alteração de serviços",
-      text30: "rhm//5pi//clt solicita código cpv",
-      text31: "rhm//5pi//clt solicita desativação de serviços",
-      text32: "rhm//5pi//clt solicita envio de correspondência",
-      text33: "rhm//5pi//clt solicita envio/cancelamento/recepção",
-      text34: "rhm//5pi//clt solicita/informa alteração de residência",
-      text35: "rhm//5pi//clt solicita/informa que recebeu o cartão sim e solicita a portabilidade//agendada a portabilidade em SFA para data xxxx",
-      text36: "rhm//5pi//clt solicita renegociação",
-      text37: "rhm//5pi//clt solicita informação/adesão ao TSI",
+      text26: "rhm//XXX//clt solicita alteração/atualização de dados ",
+      text27: "rhm//XXX//clt solicita alteração do titular/contratual",
+      text28: "rhm//XXX//clt solicita alteração na instalação/equipamentos",
+      text29: "rhm//XXX//clt solicita alteração de serviços",
+      text30: "rhm//XXX//clt solicita código cpv",
+      text31: "rhm//XXX//clt solicita desativação de serviços",
+      text32: "rhm//XXX//clt solicita envio de correspondência",
+      text33: "rhm//XXX//clt solicita envio/cancelamento/recepção",
+      text34: "rhm//XXX//clt solicita informações alteração de residência",
+      text35: "rhm//XXX//clt solicita informações que recebeu o cartão sim e solicita a portabilidade//agendada a portabilidade em SFA para data xxxx",
+      text36: "rhm//XXX//clt solicita renegociação",
+      text37: "rhm//XXX//clt solicita informação/adesão ao TSI",
 
-      text38: "rhm//5pi//clt solicita/cancelamento 2via do cartão sim",
-      text39: "rhm//5pi//clt solicita ativação do cartão sim",
-      text40: "rhm//5pi//clt solicita adesão ao plano móvel",
-      text41: "rhm//5pi//clt solicita aditivos/extra-plafond",
-      text42: "rhm//5pi//clt solicita alteração do tarifário",
-      text43: "rhm//5pi//clt solicita informação/ativação sobre/do móvel roaming",
-      text44: "rhm//5pi//clt solicita PIN/PUK",
+      text38: "rhm//XXX//clt solicita/cancelamento 2via do cartão sim",
+      text39: "rhm//XXX//clt solicita ativação do cartão sim",
+      text40: "rhm//XXX//clt solicita adesão ao plano móvel",
+      text41: "rhm//XXX//clt solicita aditivos/extra-plafond",
+      text42: "rhm//XXX//clt solicita alteração do tarifário",
+      text43: "rhm//XXX//clt solicita informação/ativação sobre/do móvel roaming",
+      text44: "rhm//XXX//clt solicita PIN/PUK",
 
-      text45: "rhm//5pi//clt agradece/sugere",
-      text46: "rhm//5pi//clt solicita sobre área de cliente",
-      text47: "rhm//5pi//clt solicita/informa",
-      text48: "rhm//5pi//clt solicita/informa",
-      text49: "rhm//5pi//clt solicita/informa",
-      text50: "rhm//5pi//clt solicita/informa",
-      text51: "rhm//5pi//clt solicita",
-      text52: "rhm//5pi//clt informa/denuncia",
+      text45: "rhm//XXX//clt agradece/sugere",
+      text46: "rhm//XXX//clt solicita informações sobre área de cliente",
+      text47: "rhm//XXX//clt solicita informações",
+      text48: "rhm//XXX//clt solicita informações",
+      text49: "rhm//XXX//clt solicita informações",
+      text50: "rhm//XXX//clt solicita informações",
+      text51: "rhm//XXX//clt solicita informações",
+      text52: "rhm//XXX//clt informa/denuncia",
 
-      text53: "rhm//5pi//clt solicita/informa sobre tv analógica",
-      text54: "rhm//5pi//clt solicita/informa sobre contato por parte da NOWO",
-      text55: "rhm//5pi//clt solicita/informa sobre apoio ao cliente loop",
-      text56: "rhm//5pi//clt solicita/informa saida de canais da grelha Tv",
-      text64: "rhm//5pi//clt chamada nula/caiu",
+      text53: "rhm//XXX//clt solicita informações sobre tv analógica",
+      text54: "rhm//XXX//clt solicita informações sobre contato por parte da NOWO",
+      text55: "rhm//XXX//clt solicita informações sobre apoio ao cliente loop",
+      text56: "rhm//XXX//clt solicita informações saida de canais da grelha Tv",
+      text64: "rhm//XXX//clt chamada nula/caiu",
       
-      text57: "rhm//5pi//clt informa sobre CallCenter/Mailing",
-      text58: "rhm//5pi//clt informa sobre vendedor",
-      text59: "rhm//5pi//clt informa sobre atendimento em loja",
-      text60: "rhm//5pi//clt informa manutenção indevida do anúncio de portabilidade",
-      text61: "rhm//5pi//clt informa remoção indevida do anúncio de portabilidade",
-      text62: "rhm//5pi//clt informa sobre Técnicos/PC Medic",
-      text63: "rhm//5pi//clt informa sobre vendas/renegociação/retenção",
+      text57: "rhm//XXX//clt informa sobre CallCenter/Mailing",
+      text58: "rhm//XXX//clt informa sobre vendedor",
+      text59: "rhm//XXX//clt informa sobre atendimento em loja",
+      text60: "rhm//XXX//clt informa manutenção indevida do anúncio de portabilidade",
+      text61: "rhm//XXX//clt informa remoção indevida do anúncio de portabilidade",
+      text62: "rhm//XXX//clt informa sobre Técnicos/PC Medic",
+      text63: "rhm//XXX//clt informa sobre vendas/renegociação/retenção"
     };
-
+    
     function showText(category) {
       // Hide all categories
       document.getElementById('category1').style.display = 'none';
@@ -239,28 +251,60 @@
       document.getElementById(category).style.display = 'flex';
     }
 
-    /* function editText(text) {
-      // Get the text content
-      var selectedText = textContent[text];
-
-      // Prompt for text editing
-      var editedText = prompt('Editar texto:', selectedText);
-
-      // Update text content if user didn't cancel
-      if (editedText !== null) {
-        textContent[text] = editedText;
-        alert('Texto atualizado com sucesso!');
-      }
-    } */
-
     // Copy Text
     function copyText(text) {
-      // Get the text content
-      var selectedText = textContent[text];
+    // Get the text content
+    var selectedText = textContent[text];
+    // Convert the text to uppercase
+    // var uppercaseText = selectedText.toUpperCase();
 
-      // Copy the text to the clipboard
-      navigator.clipboard.writeText(selectedText);
-      alert(selectedText); 
+    // Copy the text to the clipboard
+    navigator.clipboard.writeText(selectedText);
+    alert(selectedText); 
+    }
+
+    function upTextCase() {
+      for (var key in textContent) {
+        textContent[key] = textContent[key].toUpperCase();
+      }
+    }
+    
+    function lowTextCase() {
+      for (var key in textContent) {
+        textContent[key] = textContent[key].toLowerCase();
+      }
+    }
+
+    // Função para alterar a parte do texto 'XXX' insensível a maiúsculas/minúsculas
+    function changeXXXText(newText) {
+      // Reinicia o objeto textContent para evitar problemas de acumulação
+      var newTextContent = {};
+    
+      for (var key in textContent) {
+        // Utiliza uma expressão regular global (g) e insensível a maiúsculas/minúsculas (i)
+        newTextContent[key] = textContent[key].replace(/XXX/gi, newText);
+      }
+    
+      // Atualiza o objeto textContent com os novos valores
+      textContent = newTextContent;
+    }
+
+    // Função principal chamada pelo botão Alterar Texto
+    function changeText() {
+      // Pergunta ao usuário qual ação deseja realizar
+      var action = prompt("Escolha o número da ação:\n1. Alterar para MAIÚSCULAS;\n2. Alterar para minúsculas;\n3. Configurar seu código: ");
+
+      // Executa a ação escolhida
+      if (action === '1') {
+        upTextCase();
+      } else if (action === '2') {
+        lowTextCase();
+      } else if (action === '3') { 
+        var newText = prompt("Digite o seu código 'XXX':");
+        changeXXXText(newText);
+      } else {
+        alert("Ação inválida");
+      }
     }
   </script>
 
