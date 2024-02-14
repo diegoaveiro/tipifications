@@ -73,6 +73,7 @@
     <button class="category-button" onclick="showText('category6')">Questões Gerais</button>
     <button class="category-button" onclick="showText('category7')">Outros</button>
     <button class="category-button" onclick="showText('category8')">Reclamações</button>
+    <button class="category-button" onclick="showText('category9')">Técnica</button>
 
     <div id="category1" class="hidden">
       <button class="copy-button" onclick="copyText('text1')">Anulação</button>
@@ -162,82 +163,94 @@
       <button class="copy-button" onclick="copyText('text62')">Tecnicos/PC Medic</button>
       <button class="copy-button" onclick="copyText('text63')">Vendas/Renegociacao/Retencao</button>
     </div>
+    
+    <div id="category9" class="hidden">
+      <button class="copy-button" onclick="copyText('text67')">INTERNET</button>
+      <button class="copy-button" onclick="copyText('text68')">TELEVISÃO</button>
+      <button class="copy-button" onclick="copyText('text69')">TELEFONE</button>
+      <button class="copy-button" onclick="copyText('text70')">MÓVEL</button>
+    </div>
   </div>
 
   <script>
     // Object to store text content
     var textContent = {
-      text1: "rhm//XXX//clt solicita anulação da assistência técnica",
-      text2: "rhm//XXX//clt informa falha de comparência da assistência técnica",
-      text3: "rhm//XXX//clt solicita antecipação da assistência técnica",
-      text4: "rhm//XXX//clt solicita remarcação da assistência técnica",
-      text5: "rhm//XXX//clt solicita informação sobre a assistência técnica",
-      text6: "rhm//XXX//clt deseja fazer uma  reclamação sobre a assistência técnica",
+      text1: "rhm//XXX//clt vdd solicita anulação da assistência técnica",
+      text2: "rhm//XXX//clt vdd informa falha de comparência da assistência técnica",
+      text3: "rhm//XXX//clt vdd solicita antecipação da assistência técnica",
+      text4: "rhm//XXX//clt vdd solicita remarcação da assistência técnica",
+      text5: "rhm//XXX//clt vdd solicita informação sobre a assistência técnica",
+      text6: "rhm//XXX//clt vdd deseja fazer uma  reclamação sobre a assistência técnica",
 
-      text7: "rhm//XXX//clt solicita informações sobre acordo de pagamento",
-      text8: "rhm//XXX//clt solicita informações sobre contatos da área de cobranças",
-      text9: "rhm//XXX//clt solicita informações sobre corte por falta de pagamento/religação",
-      text10: "rhm//XXX//clt solicita informações sobre reembolso",
-      text11: "rhm//XXX//clt solicita informações sobre suspensão/reactivação/info custo de reativação 5,99",
+      text7: "rhm//XXX//clt vdd solicita informações sobre acordo de pagamento",
+      text8: "rhm//XXX//clt vdd solicita informações sobre contatos da área de cobranças",
+      text9: "rhm//XXX//clt vdd solicita informações sobre corte por falta de pagamento/religação",
+      text10: "rhm//XXX//clt vdd solicita informações sobre reembolso",
+      text11: "rhm//XXX//clt vdd solicita informações sobre suspensão/reactivação/info custo de reativação 5,99",
 
-      text12: "rhm//XXX//clt solicita alteração do tipo de detalhe da fatura",
-      text13: "rhm//XXX//clt informa atraso/extravio de correspondência//enviado email na go//solicita 2 via",
-      text14: "rhm//XXX//clt solicita informações sobre créditos/débitos",
-      text15: "rhm//XXX//clt solicita informações sobre custo da chamada da linha de apoio",
-      text16: "rhm//XXX//clt solicita esclarecimentos sobre pós-venda/migração",
-      text17: "rhm//XXX//clt solicita esclarecimentos sobre itens da fatura",
-      text19: "rhm//XXX//clt solicita informações sobre faturação electrónica//clt aceita/recusa ativação",
-      text20: "rhm//XXX//clt solicita informações sobre carregamentos",
-      text21: "rhm//XXX//clt solicita informações sobre pagamentos não alocados",
-      text22: "rhm//XXX//clt solicita informações sobre dados para pagamentos/saldos//dados informados/enviados via sms",
-      text23: "rhm//XXX//clt solicita informações sobre débito directo//clt aceita/recusa ativação",
-      text24: "rhm//XXX//clt solicita informações sobre outras formas de pagamento",
+      text12: "rhm//XXX//clt vdd solicita alteração do tipo de detalhe da fatura",
+      text13: "rhm//XXX//clt vdd informa atraso/extravio de correspondência//enviado email na go//solicita 2 via",
+      text14: "rhm//XXX//clt vdd solicita informações sobre créditos/débitos",
+      text15: "rhm//XXX//clt vdd solicita informações sobre custo da chamada da linha de apoio",
+      text16: "rhm//XXX//clt vdd solicita esclarecimentos sobre pós-venda/migração",
+      text17: "rhm//XXX//clt vdd solicita esclarecimentos sobre itens da fatura",
+      text19: "rhm//XXX//clt vdd solicita informações sobre faturação electrónica//clt vdd aceita/recusa ativação",
+      text20: "rhm//XXX//clt vdd solicita informações sobre carregamentos",
+      text21: "rhm//XXX//clt vdd solicita informações sobre pagamentos não alocados",
+      text22: "rhm//XXX//clt vdd solicita informações sobre dados para pagamentos/saldos//dados informados/enviados via sms",
+      text23: "rhm//XXX//clt vdd solicita informações sobre débito directo//clt vdd aceita/recusa ativação",
+      text24: "rhm//XXX//clt vdd solicita informações sobre outras formas de pagamento",
 
-      text26: "rhm//XXX//clt solicita alteração/atualização de dados ",
-      text27: "rhm//XXX//clt solicita alteração do titular/contratual",
-      text28: "rhm//XXX//clt solicita alteração na instalação/equipamentos",
-      text29: "rhm//XXX//clt solicita adesão aos serviços nowo//moradia vdd//moradia//chamada transf adesão",
-      text30: "rhm//XXX//clt solicita código cpv",
-      text31: "rhm//XXX//clt solicita desativação de serviços",
-      text32: "rhm//XXX//clt solicita envio de correspondência",
-      text33: "rhm//XXX//clt solicita envio/cancelamento/recepção",
-      text34: "rhm//XXX//clt informa alteração de residência",
-      text35: "rhm//XXX//clt solicita informações que recebeu o cartão sim e solicita a portabilidade//agendada a portabilidade em SFA para data xxxx",
-      text36: "rhm//XXX//clt solicita renegociação do contrato//fidelização",
-      text37: "rhm//XXX//clt solicita informação/adesão ao TSI",
+      text26: "rhm//XXX//clt vdd solicita alteração/atualização de dados ",
+      text27: "rhm//XXX//clt vdd solicita alteração do titular/contratual",
+      text28: "rhm//XXX//clt vdd solicita alteração na instalação/equipamentos",
+      text29: "rhm//XXX//clt vdd solicita adesão aos serviços nowo//moradia vdd//moradia//chamada transf adesão",
+      text30: "rhm//XXX//clt vdd solicita código cpv",
+      text31: "rhm//XXX//clt vdd solicita desativação de serviços",
+      text32: "rhm//XXX//clt vdd solicita envio de correspondência",
+      text33: "rhm//XXX//clt vdd solicita envio/cancelamento/recepção",
+      text34: "rhm//XXX//clt vdd informa alteração de residência",
+      text35: "rhm//XXX//clt vdd solicita informações que recebeu o cartão sim e solicita a portabilidade//agendada a portabilidade em SFA para data xxxx",
+      text36: "rhm//XXX//clt vdd solicita renegociação",
+      text37: "rhm//XXX//clt vdd solicita informação/adesão ao TSI",
 
-      text38: "rhm//XXX//clt solicita 2via do cartão sim",
-      text39: "rhm//XXX//clt solicita ativação do cartão sim",
-      text40: "rhm//XXX//clt solicita adesão ao plano móvel",
-      text41: "rhm//XXX//clt solicita aditivos/extra-plafond",
-      text42: "rhm//XXX//clt solicita alteração do tarifário",
-      text43: "rhm//XXX//clt solicita informação/ativação sobre/do móvel roaming",
-      text44: "rhm//XXX//clt solicita PIN/PUK",
+      text38: "rhm//XXX//clt vdd solicita/cancelamento 2via do cartão sim",
+      text39: "rhm//XXX//clt vdd solicita ativação do cartão sim",
+      text40: "rhm//XXX//clt vdd solicita adesão ao plano móvel",
+      text41: "rhm//XXX//clt vdd solicita aditivos/extra-plafond",
+      text42: "rhm//XXX//clt vdd solicita alteração do tarifário",
+      text43: "rhm//XXX//clt vdd solicita informação/ativação sobre/do móvel roaming",
+      text44: "rhm//XXX//clt vdd solicita PIN/PUK",
 
-      text45: "rhm//XXX//clt agradece/sugere",
-      text46: "rhm//XXX//clt solicita informações sobre área de cliente",
-      text47: "rhm//XXX//clt informa estar/ter",
-      text48: "rhm//XXX//clt informa estar/ter",
-      text49: "rhm//XXX//clt informa estar/ter",
-      text50: "rhm//XXX//clt informa estar/ter",
-      text51: "rhm//XXX//clt solicita informações",
-      text52: "rhm//XXX//clt informa/denuncia",
+      text45: "rhm//XXX//clt vdd agradece/sugere",
+      text46: "rhm//XXX//clt vdd solicita informações sobre área de cliente",
+      text47: "rhm//XXX//clt vdd informa",
+      text48: "rhm//XXX//clt vdd informa",
+      text49: "rhm//XXX//clt vdd informa",
+      text50: "rhm//XXX//clt vdd informa",
+      text51: "rhm//XXX//clt vdd solicita informações",
+      text52: "rhm//XXX//clt vdd informa/denuncia",
 
-      text53: "rhm//XXX//clt solicita informações sobre tv analógica",
-      text54: "rhm//XXX//clt solicita informações sobre contato por parte da NOWO",
-      text55: "rhm//XXX//clt solicita informações sobre apoio ao cliente loop",
-      text56: "rhm//XXX//clt solicita informações saida de canais da grelha Tv",
-      text64: "rhm//XXX//clt chamada nula/caiu",
+      text53: "rhm//XXX//clt vdd solicita informações sobre tv analógica",
+      text54: "rhm//XXX//clt vdd solicita informações sobre contato por parte da NOWO",
+      text55: "rhm//XXX//clt vdd solicita informações sobre apoio ao cliente loop",
+      text56: "rhm//XXX//clt vdd solicita informações saida de canais da grelha Tv",
+      text64: "rhm//XXX//clt vdd chamada nula/caiu",
       text65: "info custo de reativação 5,99",
-      text66: "info DD/FE//clt aceita/recusa ativação",
+      text66: "info DD/FE//clt vdd aceita/recusa ativação",
       
-      text57: "rhm//XXX//clt informa sobre CallCenter/Mailing",
-      text58: "rhm//XXX//clt informa sobre vendedor",
-      text59: "rhm//XXX//clt informa sobre atendimento em loja",
-      text60: "rhm//XXX//clt informa manutenção indevida do anúncio de portabilidade",
-      text61: "rhm//XXX//clt informa remoção indevida do anúncio de portabilidade",
-      text62: "rhm//XXX//clt informa sobre Técnicos/PC Medic",
-      text63: "rhm//XXX//clt informa sobre vendas/renegociação/retenção"
+      text57: "rhm//XXX//clt vdd informa sobre CallCenter/Mailing",
+      text58: "rhm//XXX//clt vdd informa sobre vendedor",
+      text59: "rhm//XXX//clt vdd informa sobre atendimento em loja",
+      text60: "rhm//XXX//clt vdd informa manutenção indevida do anúncio de portabilidade",
+      text61: "rhm//XXX//clt vdd informa remoção indevida do anúncio de portabilidade",
+      text62: "rhm//XXX//clt vdd informa sobre Técnicos/PC Medic",
+      text63: "rhm//XXX//clt vdd informa sobre vendas/renegociação/retenção",
+      
+      text67: "rhm//XXX//clt vdd informa estar sem serviços de internet//",
+      text68: "rhm//XXX//clt vdd informa estar sem serviços de televisão//",
+      text69: "rhm//XXX//clt vdd informa estar sem serviços de telefone//",
+      text70: "rhm//XXX//clt vdd informa estar sem serviços móveis//"
     };
     
     function showText(category) {
@@ -250,6 +263,7 @@
       document.getElementById('category6').style.display = 'none';
       document.getElementById('category7').style.display = 'none';
       document.getElementById('category8').style.display = 'none';
+      document.getElementById('category9').style.display = 'none';
 
       // Show the selected category
       document.getElementById(category).style.display = 'flex';
